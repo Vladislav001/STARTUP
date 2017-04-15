@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Startup</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styleHome.css">
+    <link rel="import" href="/catalog.html">
+      <link rel="stylesheet" href="css/styles.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <!-- БЛОК 1-ГО МЕНЮ НАЧАЛО -->
+    <nav class="navbar navbar-default menu">
+      <!-- Содержимое 1-го меню (соц.сети + аутентификация) -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-left icons">
+          <li><a href="https://vk.com/vladiclav001" target="_blank" title="VK"><img src="imagesStandart/vk.png"></a></li>
+          <li><a href="https://vk.com/chrtnv" target="_blank" title="Facebook"><img src="imagesStandart/facebook.png"></a></li>
+          <li><a href="https://vk.com/id321341174" target="_blank" title="Twitter"><img src="imagesStandart/twitter.png"></a></li>
+          <li><a href="https://vk.com/pfff34" target="_blank" title="Instagram"><img src="imagesStandart/instagram.png"></a></li>
+          <li><a href="#" target="_blank" title="YouTube"><img src="imagesStandart/youtube.png"></a></li>
+          <li><a href="#" target="_blank" title="Google+"><img src="imagesStandart/google_plus.png"></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right authentication">
+          <li><a href="#basketModal" data-toggle="modal"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+          <!-- Основное содержимое модального окна Корзины покупок-->
+          <!-- HTML-код модального окна -->
+          <div id="basketModal" class="modal fade" tabindex="-1">
+           <div class="modal-dialog modal-xs">
+            <div class="modal-content ">
+            <!-- Заголовок модального окна -->
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title">Ваша корзина</h4>
+            </div>
+            <!-- Основное содержимое модального окна корзины покупок-->
+            <div class="modal-body">
+              <fieldset>
+                <div class="form-group">
+                  <label for="countProducts" class="col-xs-2 control-label labels cart-label">Количество товаров:</label>
+                  <div class="col-xs-10">
+                    <input type="login" class="form-control" id="countProducts" placeholder="Ваша корзина пуста">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="countPriceProducts" class="col-xs-2 control-label labels cart-label">Общая стоимость:</label>
+                  <div class="col-xs-10">
+                    <input type="login" class="form-control" id="countPriceProducts" placeholder="Ваша корзина пуста">
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <!-- Футер модального окна -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default">Перейти к оплате</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Закрыть</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+          <li><a href="#registryModal" data-toggle="modal">Регистрация</a></li>
+          <!-- Основное содержимое модального окна Регистрации-->
+          <!-- HTML-код модального окна -->
+          <div id="registryModal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-md">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" data-dismiss="modal">x</button>
+                <h4 class="modal-title">Регистрация</h4>
+            </div>
+            <div class="modal-body">
+              <fieldset>
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputLogin" class="col-xs-2 control-label labels">Имя:</label>
+                    <div class="col-xs-10">
+                      <input type="login" class="form-control" id="inputLogin" placeholder="Введите имя пользователя">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-xs-2 control-label labels">Email:</label>
+                    <div class="col-xs-10">
+                      <input type="email" class="form-control" id="inputEmail" placeholder="Введите email">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword" class="col-xs-2 control-label labels">Пароль:</label>
+                    <div class="col-xs-10">
+                      <input type="password" class="form-control" id="inputPassword" placeholder="Введите пароль">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputRepetitionPassword" class="col-xs-2 control-label labels">Повторите пароль:</label>
+                    <div class="col-xs-10">
+                      <input type="password" class="form-control" id="inputRepetitionPassword" placeholder="Повторите пароль">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-xs-offset-2 col-xs-10">
+                      <div class="checkbox">
+                        <label><input type="checkbox"> Я согласен с <a href="#" target="_blank">правилами сайта</a></label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default btn-registry"style=width:166px;>Зарегистрироваться</button>
+              <button class="btn btn-primary" data-dismiss="modal">Закрыть</button>
+            </div>
+          </div>
+        </div>
+       </div>
+
+            <li><a href="#autModal" data-toggle="modal">Вход</a></li>
+            <!-- Основное содержимое модального окна Входа-->
+            <!-- HTML-код модального окна -->
+            <div id="autModal" class="modal fade" tabindex="-1">
+              <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                  <!-- Заголовок модального окна -->
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Вход</h4>
+                  </div>
+                  <div class="modal-body">
+                    <fieldset>
+                      <form class="form-horizontal">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-xs-2 control-label labels">Email:</label>
+                          <div class="col-xs-10">
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Введите email">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPassword" class="col-xs-2 control-label labels">Пароль:</label>
+                        <div class="col-xs-10">
+                          <input type="password" class="form-control" id="inputPassword" placeholder="Введите пароль">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-xs-offset-2 col-xs-10">
+                          <div class="checkbox">
+                            <div class="pull-left">
+                              <label><input type="checkbox"> Запомнить</label>
+                            </div>
+                            <a href="" class="btn btn-link pull-right">Забыли пароль?</a><br />
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <!-- Футер модального окна -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default">Войти</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Закрыть</button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            </ul>
+
+          </div>
+        </nav>
+        <!-- БЛОК 1-ГО МЕНЮ КОНЕЦ-->
+
+<!-- КАРТИНКА С ЛОГО САЙТА -->
+<div class="imageShapka">
+  <img src="imagesStandart/wm.png" width=100% alt="">
+</div>
+<!-- КАРТИНКА С ЛОГО САЙТА -->
+
+
+<!-- БЛОК 2-ГО МЕНЮ НАЧАЛО -->
+      <div class="navbar navbar-inverse navbar-static-top">
+        <!-- Содержимое 2-го меню (коллекция навигационных ссылок, формы и др.) -->
+          <div class="collapse navbar-collapse"  id="main-menu" >
+              <!-- Список ссылок, расположенных слева -->
+            <ul class="nav navbar-nav">
+              <a class="navbar-brand" href="#">ИВТ-262</a> <!--БРЕНД САЙТА-->
+              <li><a class="activ-page" href="home.html">Главная</a></li>
+              <li><a href="catalog.html">Каталог</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Контакты</a></li>
+              <li><a href="#">О нас</a></li>
+            </ul>
+          </div>
+      </div>
+<!-- БЛОК 2-ГО МЕНЮ КОНЕЦ-->
+
+<!-- БЛОК ТЕКСТУР, 3D МОДЕЛЬ, ВЫСОКОПОЛИГОНАЛЬНЫХ СКАНОВ НАЧАЛО-->
+<div class="container">
+  <div class="row">
+    <div class="card-row clearfix">
+      <div class="col-md-4">
+        <div class="card">
+          <a href="#"><img src="imagesHome/1.jpg"></a>
+          <div align="center"><h4>Текстуры</h4></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <a href="#"><img src="imagesHome/2.jpg"></a>
+          <div align="center"><h4>3D Модели</h4></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <a href="#"><img src="imagesHome/3.jpg"></a>
+            <div align="center"><h4>Высокополигональные модели 3D<br>
+            (фотограмметрические сканы)</h4></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- БЛОК ТЕКСТУР, 3D МОДЕЛЬ, ВЫСОКОПОЛИГОНАЛЬНЫХ СКАНОВ КОНЕЦ-->
+
+<!-- КАРУСЕЛЬ СЛАЙДОВ НАЧАЛО-->
+
+<div class="container">
+<div id="carousel" class="carousel slide" width=100%>
+      <!--Индикаторы слайдов -->
+      <ol class="carousel-indicators">
+        <li class="active" data-target="#carousel" data-slide-to="0"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+      </ol>
+    <!--Слайды-->
+    <div class="carousel-inner">
+       <!-- Слайды создаются с помощью контейнера с классом item, внутри которого помещается содержимое слайда -->
+      <div class="item active">
+        <img src="imagesHome/wm_cover.png" width=100% alt="">
+        <div class="carousel-caption">
+          <h2>ТЕКСТУРЫ</h2>
+          <!--<p>Описание первого слайда</p>-->
+        </div>
+      </div>
+      <div class="item">
+        <img src="imagesHome/wm_cover_2.png" width=100% alt="">
+        <div class="carousel-caption">
+          <h2>3D МОДЕЛИ</h2>
+        </div>
+      </div>
+      <div class="item">
+        <img src="imagesHome/wm_cover_3.png" width=100% alt="">
+        <div class="carousel-caption">
+          <h2>ФОТОГРАММЕТРИЧЕСКИЕ СКАНЫ</h2>
+        </div>
+      </div>
+    </div>
+    <!--Стрелки переключения слайдов -->
+    <a href="#carousel" class="left carousel-control" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a href="#carousel" class="right carousel-control" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+</div>
+<!-- КАРУСЕЛЬ СЛАЙДОВ КОНЕЦ-->
+
+
+
+<!-- ПОДВАЛ САЙТА НАЧАЛО-->
+<div class="footer-all">
+<footer>
+  <div class="footer-left"><h3>Кратко о нашем сайте</h3>
+    Наш сайт - это торговая площадка, где вы можете покупать<br>
+    и продавать текстуры, 3D модели, фотограмметрические сканы<br>
+    и плагины для различных проектов. У нас только качественные<br>
+    образцы товаров.
+    <div id="scrollup"><img alt="Прокрутить вверх" src="imagesHome/scrollup.png"></div>
+    <br><br><h4>Следуйте за нами</h4>
+    <ul class="nav navbar-nav navbar-left footer-icons">
+      <li><a href="https://vk.com/vladiclav001" target="_blank" title="VK"><img src="imagesStandart/vk.png"></a></li>
+      <li><a href="https://vk.com/chrtnv" target="_blank" title="Facebook"><img src="imagesStandart/facebook.png"></a></li>
+      <li><a href="https://vk.com/id321341174" target="_blank" title="Twitter"><img src="imagesStandart/twitter.png"></a></li>
+      <li><a href="https://vk.com/pfff34" target="_blank" title="Instagram"><img src="imagesStandart/instagram.png"></a></li>
+      <li><a href="#" target="_blank" title="YouTube"><img src="imagesStandart/youtube.png"></a></li>
+      <li><a href="#" target="_blank" title="Google+"><img src="imagesStandart/google_plus.png"></a></li>
+    </ul>
+  </div>
+
+  <div class="footer-right"><h3>Контакты & Поддержка</h3>
+    <p><img src="imagesStandart/TechSupport.png" align="left"><a href="#"><h5>Тех. Поддержка</h5></a></p>
+    <p><img src="imagesStandart/SupportCenter.png" align="left"><a href="#"><h5>Центр помощи</h5></a></p>
+    <p><img src="imagesStandart/SendMessage.png" align="left"><a href="#"><h5>Послать сообщение</h5></a></p>
+    <h3>Правовые аспекты</h3>
+    <p><img src="imagesStandart/Confidentiality.png" align="left"><a href="#"><h5>Конфиденциальность</h5></a></p>
+    <p><img src="imagesStandart/Agreement.png" align="left"><a href="#"><h5>Соглашение</h5></a></p>
+    <p><img src="imagesStandart/UserAgreement.png" align="left"><a href="#"><h5>Пользовательское соглашение</h5></a></p>
+  </div>
+
+  </footer>
+    <div class="footer-bottom-left">
+      <p><h5>© 2017. Все права защищены. При поддержке <a href="#">XXX</h5></a></p>
+    </div>
+  <div class="footer-bottom-right">
+    <p><h5><a href="#">Лучшие текстуры, 3D модели и плагины | НАШ САЙТ</h5></a></p>
+</div>
+</div>
+<!-- ПОДВАЛ САЙТА КОНЕЦ-->
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/scrollup.js'></script>
+  </body>
+</html>
