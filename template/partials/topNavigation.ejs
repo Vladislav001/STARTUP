@@ -1,0 +1,36 @@
+<nav class="navbar navbar-default" role="navigation">
+  <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav navbar-left icons">
+      <li><a href="https://vk.com/vladiclav001" target="_blank" title="VK"><img src="/imagesStandart/vk.png"></a></li>
+      <li><a href="https://vk.com/chrtnv" target="_blank" title="Facebook"><img src="/imagesStandart/facebook.png"></a></li>
+      <li><a href="https://vk.com/id321341174" target="_blank" title="Twitter"><img src="/imagesStandart/twitter.png"></a></li>
+      <li><a href="https://vk.com/pfff34" target="_blank" title="Instagram"><img src="/imagesStandart/instagram.png"></a></li>
+      <li><a href="#" target="_blank" title="YouTube"><img src="/imagesStandart/youtube.png"></a></li>
+      <li><a href="#" target="_blank" title="Google+"><img src="/imagesStandart/google_plus.png"></a></li>
+    </ul>
+  </ul>
+
+
+  <ul class="nav navbar-nav navbar-right">
+    <% if (user) { %>
+      <li><a href="/personalArea" onclick="$('body').append('<form id=\'submitme\' method=\'GET\' action=\'/personalArea\'></form>');$('#submitme').submit();return false;">Личный кабинет</a></li>
+     <li><a href="" onclick="$('body').append('<form id=\'submitme\' method=\'POST\' action=\'/logout\'></form>');$('#submitme').submit();return false;" title="Выйти">Выйти</a></li>
+    <% } else { %>
+    <li><a href="/login" title="Войти">Войти</a></li>
+    <% } %>
+  </ul>
+
+  <ul class="nav navbar-nav navbar-right">
+    <% if (!user) { %>
+    <li><a href="/registration" title="Регистрация">Регистрация</a></li>
+    <% } else { %>
+        <li><a href="" onclick="$('body').append('<form id=\'submitme\' method=\'POST\' action=\'/logout\'></form>');$('#submitme').submit();return false;"></a></li>
+      <% } %>
+  </ul>
+
+  <ul class="nav navbar-nav navbar-right authentication">
+  <li><a href="#basketModal" data-toggle="modal" title="Перейти в корзину"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+
+  </ul>
+
+</nav>

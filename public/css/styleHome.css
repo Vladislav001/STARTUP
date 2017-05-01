@@ -1,0 +1,145 @@
+.icons li a{
+	padding: 15px 5px;
+}
+.navbar-brand{
+	margin-left: 55px;
+}
+.authentication li a{
+  padding: 15px 10px;
+}
+.imageShapka{
+    margin-bottom: 0px;
+}
+.activ-page{
+	font-size: 150%; /* Размер шрифта */
+}
+.carousel{
+  margin-top: 25px;
+}
+.card-row{
+ margin: 0 auto; /* Отступ слева и справа */
+}
+.card-row a:hover img{
+	box-shadow: 0 0 30px rgba(0, 0, 0, .70);
+	-webkit-transition: all 0.7s ease-out; /*-webkit- — для Google Chrome и Safari*/
+	-moz-transition: all 0.7s ease-out; /*-moz- — для Firefox*/
+  -o-transition: all 0.7s ease-out; /*-o- — для браузера Опера*/
+ -webkit-transform: scale(1.03);
+ -moz-transform: scale(1.03);
+ -o-transform: scale(1.03);
+}
+.item h2{
+	text-shadow: #263238 0 0 2px;
+	-webkit-text-stroke: 0.3px black;
+}
+
+
+
+footer {
+	margin-bottom: 0px;
+  margin-top: 0px;
+	height: 260px;
+	background-color: white;
+	/*background-image: url("footer.jpg");
+	background-size: cover;*/
+}
+footer .footer-left{
+	margin-left: 60px;
+	float: left;
+}
+.footer-icons li a{
+	margin-top: 0px;
+	padding: 15px 5px;
+}
+footer .footer-right{
+	margin-right: 60px;
+	float: right;
+}
+footer .footer-right  img {
+	margin-right: 5px;
+}
+footer .footer-right  a:Hover {
+	color:red;
+}
+footer .footer-right  a {
+	color:black;
+}
+.footer-bottom-left{
+	margin-left: 45px;
+	float:left;
+}
+.footer-bottom-left  a {
+	color:black;
+}
+.footer-bottom-left a:Hover {
+	color:red;
+}
+.footer-bottom-right{
+	margin-right: 45px;
+	float: right;
+}
+.footer-bottom-right a{
+	color: black;
+}
+.footer-bottom-right a:Hover{
+	color: red;
+}
+
+#scrollup {
+position: fixed; /* фиксированная позиция */
+opacity: 1.0; /* прозрачность */
+padding: 15px 10px 10px; /* отступы */
+border-radius: 5px; /* скругление углов */
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+left: 3px; /* отступ слева */
+bottom: 10px; /* отступ снизу */
+display: none; /* спрятать блок */
+cursor: pointer;
+}
+
+/*Для правил сайта*/
+pre h5, h2 {
+	margin-left: 25px;
+	-webkit-text-stroke: 0.3px black;
+}
+
+/*ПОД АДАПТИВНУЮ ВЕРСТКУ*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* МЕДИА ЗАПРОСЫ - АДАПТИВНОСТЬ ПОД РАЗНЫЕ РАЗМЕРЫ ЭКРАНА */
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+}
+
+@media only screen and (min-width : 993px) {
+
+}

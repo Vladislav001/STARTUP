@@ -1,0 +1,144 @@
+.btn:focus{
+outline: none !important;
+}
+.btn:hover{
+outline: none;
+}
+.btn:active{
+outline: none;
+}
+.img{
+height: 400px;
+margin-top: 25px;
+}
+.imgg{
+  border-width: 10px;
+  width:400px;
+  border-color: :#665e61;
+}
+.imgg:hover{
+}
+
+/*------- {{img-responsive - изобрважение каталога }} -------*/
+.img-responsive{
+border-radius: 5px;
+border-width: 10px;
+border-color: :#665e61;
+box-shadow: 0 0 7px;
+transition: all 0.3s ease;
+}
+.img-responsive:hover{
+    box-shadow: 0px 0px 15px 3px rgba(50, 50, 51, 0.76);
+    transform:scale(1.01);
+}
+/*------- {{.btn-add - кнопка добавить вы корзину}} -------*/
+.btn-add{
+margin: 10px;
+margin-left: 0;
+margin-bottom: 0;
+}
+/*------- {{inside - содержимое полей}} -------*/
+.inside{
+  font-family: "Helvetica ",sans-serif;
+  font-size: 14px;
+  border-width: 3px;
+  text-align: justify;
+  transition: all 0.3s ease;
+  border-color: #ccc;
+  border: 1px solid #ccc; /* Белая рамка */
+  border-radius: 4px;
+  padding: 3px;
+  min-height: 40px;
+  transition-duration: 0.2s;
+}
+.inside:hover{
+    box-shadow: 0 0 8px;
+    text-decoration: underline;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+    box-shadow:        0px 0px 15px 0px rgba(50, 50, 51, 0.76);
+    border-radius: 3px;
+    padding: 6px;
+    border-color: #42aaff;
+}
+.insideName{
+  text-align: justify;
+  font-size: 14px;
+  font-weight:bold;
+  display: inline-block;
+  position: relative;
+}
+.insideName:hover{
+    font-size: 14px;
+    text-decoration: underline;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 8px;
+    border-radius: 3px;
+}
+.descriptionItem{
+  font-size: 12px;
+}
+.descriptionItem:hover{
+  background-color: white;
+  font-size: 15px;
+  transition-property:font-size;
+  transition-property: width;
+  transition: 0.3s ease-in-out;
+}
+/*------- {{По-мелочи}} -------*/
+.csr{
+  margin-top: 0;
+  font-size: 16;
+}
+.name{
+  float: left;
+}
+.price{
+font-size: 14px;
+float: left;
+}
+.price:hover{
+}
+.addToCart{
+  float: left;
+}
+/*------- {{Окно регистрации}} -------*/
+.control-label {
+  margin: 0px;
+  padding-top: 7px !important;
+  padding-right: 0px;
+  text-align: justify;
+}
+.control-label:hover {
+
+}
+.form-control{
+  padding-right: 8px;
+  height: 40px;
+  margin-bottom:  7px;
+}
+.form-control:hover{
+
+border-color: #42aaff;
+transition-duration: 0.2s;
+box-shadow: 0px 0px 15px 0px rgba(50, 50, 51, 0.76);
+}
+.btn-registry{
+}
+.form-group{
+  height: 40px;
+  margin-bottom: 7px;
+}
+.labels{
+  margin-right: 2px;
+  text-align: right;
+  width: 90px;
+  padding: 0px!important;
+  padding-top: 5px!important;
+}
+.labels:hover{
+
+}
+.cart-label{
+    padding: 0px!important;
+}

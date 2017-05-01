@@ -1,0 +1,63 @@
+  <link rel="stylesheet" href="css/styleHome.css">
+       <link rel="stylesheet" href="css/styleLogin.css">
+<% layout('layout/page') -%>
+<% block('title') -%>
+
+<form class="form-signin" name="login-form">
+  <h2><center>Авторизация</center></h2>
+  <h5><center>Пожалуйста, войдите в свой аккаунт.</center></h5>
+  <div class="form-group">
+    <input name="username" value="name" type="text" class="form-control" id="input-username" placeholder="Имя">
+  </div>
+  <div class="form-group">
+      <input name="password" value="pass" type="password" class="form-control" id="input-password" placeholder="Пароль">
+  </div>
+  <div class="form-group">
+    <label class="checkbox">
+      <input type="checkbox" value="remember-me"> Запомнить меня
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="btn-signin">
+      <button type="submit" class="btn btn-lg btn-primary btn-block" data-loading-text="Отправляю...">Войти</button>
+      <span class="help-block error"></span>
+      </label>
+  </div>
+  <br>
+    <h5><p><a href="#">Забыли свой пароль?</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/registration"> Зарегистрироваться</a></h5></p>
+</form>
+ <br><br><br><br><br><br>
+
+<script>
+// Клиентский код //
+// Человек вводит логин, пароль
+  $(document.forms['login-form']).on('submit', function() {
+    var form = $(this);
+
+    $('.error', form).html('');
+    $(":submit", form).button("loading");
+
+    // Этот логин, пароль отправляется на сервер
+    $.ajax({
+      url: "/login", // роут: require('./login').post
+      method: "POST",
+      data: form.serialize(),
+      complete: function() {
+        $(":submit", form).button("reset");
+      },
+      statusCode: {
+        // если ответ сервера 200 - перенаправляем человека в личный кабинет
+        200: function() {
+          form.html("Вы вошли в сайт").addClass('alert-success');
+          window.location.href = "/personalArea";
+        },
+        // если 403 - высвечивается ошибка
+        403: function(jqXHR) {
+          var error = JSON.parse(jqXHR.responseText);
+          $('.error', form).html(error.message);
+        }
+      }
+    });
+    return false;
+  });
+</script>

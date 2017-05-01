@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="css/styleHome.css">
+<% layout('layout/page') -%>
+<% block('title'); -%>
+
+<!-- БЛОК ТЕКСТУР, 3D МОДЕЛЬ, ВЫСОКОПОЛИГОНАЛЬНЫХ СКАНОВ НАЧАЛО-->
+<div class="container">
+  <div class="row">
+    <div class="card-row clearfix">
+      <div class="col-md-4">
+        <div class="card">
+          <a href="/catalog"><img src="/imagesHome/1.jpg"></a>
+          <div align="center"><h4>Текстуры</h4></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <a href="/catalog"><img src="/imagesHome/2.jpg"></a>
+          <div align="center"><h4>3D Модели</h4></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <a href="/catalog"><img src="/imagesHome/3.jpg"></a>
+            <div align="center"><h4>Высокополигональные модели 3D<br>
+            (фотограмметрические сканы)</h4></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- БЛОК ТЕКСТУР, 3D МОДЕЛЬ, ВЫСОКОПОЛИГОНАЛЬНЫХ СКАНОВ КОНЕЦ-->
+
+<!-- КАРУСЕЛЬ СЛАЙДОВ НАЧАЛО-->
+<div class="container">
+<div id="carousel" class="carousel slide" width=100%>
+      <!--Индикаторы слайдов -->
+      <ol class="carousel-indicators">
+        <li class="active" data-target="#carousel" data-slide-to="0"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+      </ol>
+    <!--Слайды-->
+    <div class="carousel-inner">
+       <!-- Слайды создаются с помощью контейнера с классом item, внутри которого помещается содержимое слайда -->
+      <div class="item active">
+        <img src="/imagesHome/wm_cover.png" width=100% alt="">
+        <div class="carousel-caption">
+          <h2>ТЕКСТУРЫ</h2>
+          <!--<p>Описание первого слайда</p>-->
+        </div>
+      </div>
+      <div class="item">
+        <img src="/imagesHome/wm_cover_2.png" width=100% alt="">
+        <div class="carousel-caption">
+          <h2>3D МОДЕЛИ</h2>
+        </div>
+      </div>
+      <div class="item">
+        <img src="/imagesHome/wm_cover_3.png" width=100% alt="">
+        <div class="carousel-caption">
+          <h2>ФОТОГРАММЕТРИЧЕСКИЕ СКАНЫ</h2>
+        </div>
+      </div>
+    </div>
+    <!--Стрелки переключения слайдов -->
+    <a href="#carousel" class="left carousel-control" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a href="#carousel" class="right carousel-control" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+</div>
+<!-- КАРУСЕЛЬ СЛАЙДОВ КОНЕЦ-->

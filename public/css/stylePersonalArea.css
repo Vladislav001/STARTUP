@@ -1,0 +1,192 @@
+.icons li a{
+	padding: 15px 5px;
+}
+.navbar-brand{
+	margin-left: 55px;
+}
+.authentication li a{
+  padding: 15px 10px;
+}
+.imageShapka{
+    margin-bottom: 0px;
+}
+
+/* СТИЛИ ЛИЧНОГО КАБИНЕТА НАЧАЛО */
+ .glyphicon-user{
+width: 35px;
+paddng-right: 155px;
+padding-top: 5px;
+}
+
+
+/*
+.navmenu li a{
+	padding: 5px;
+}
+.dropdown-menu li a{
+	padding: 2px;
+}
+*/
+
+
+.description h4{
+	margin-left: 35px;
+}
+.round{
+		margin-left: 60px;
+	  border-radius: 100px; /* Радиус скругления */
+    border: 3px solid green; /* Параметры рамки */
+    box-shadow: 0 0 7px #666; /* Параметры тени */
+}
+.btn-primary{
+	margin-left: 82px;
+  color: white;
+}
+.changeAvatar{
+	margin-right: 2100px;
+}
+
+.col-md-4 .form-control-personalArea{
+	width: auto;
+	padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.col-md-4 .form-control-personalArea-aboutMe{
+	width: 300px;
+	height: 60px;
+	padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+/* СТИЛИ ЛИЧНОГО КАБИНЕТА КОНЕЦ */
+
+
+
+footer {
+	margin-bottom: 0px;
+  margin-top: 0px;
+	height: 260px;
+	background-color: white;
+	/*background-image: url("footer.jpg");
+	background-size: cover;*/
+}
+footer .footer-left{
+	margin-left: 60px;
+	float: left;
+}
+.footer-icons li a{
+	margin-top: 0px;
+	padding: 15px 5px;
+}
+footer .footer-right{
+	margin-right: 60px;
+	float: right;
+}
+footer .footer-right  img {
+	margin-right: 5px;
+}
+footer .footer-right  a:Hover {
+	color:red;
+}
+footer .footer-right  a {
+	color:black;
+}
+.footer-bottom-left{
+	margin-left: 45px;
+	float:left;
+}
+.footer-bottom-left  a {
+	color:black;
+}
+.footer-bottom-left a:Hover {
+	color:red;
+}
+.footer-bottom-right{
+	margin-right: 45px;
+	float: right;
+}
+.footer-bottom-right a{
+	color: black;
+}
+.footer-bottom-right a:Hover{
+	color: red;
+}
+
+#scrollup {
+position: fixed; /* фиксированная позиция */
+opacity: 1.0; /* прозрачность */
+padding: 15px 10px 10px; /* отступы */
+border-radius: 5px; /* скругление углов */
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+left: 3px; /* отступ слева */
+bottom: 10px; /* отступ снизу */
+display: none; /* спрятать блок */
+cursor: pointer;
+}
+
+
+
+
+/*ПОД АДАПТИВНУЮ ВЕРСТКУ*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* МЕДИА ЗАПРОСЫ - АДАПТИВНОСТЬ ПОД РАЗНЫЕ РАЗМЕРЫ ЭКРАНА */
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+}
+
+@media only screen and (min-width : 993px) {
+
+}

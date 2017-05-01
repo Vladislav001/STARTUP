@@ -1,0 +1,60 @@
+<!--Подключаем CSS Jasny Bootstrap -->
+<link href="css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="css/styleCatalog.css">
+<% layout('layout/page') -%>
+<% block('title'); -%>
+
+<!-- ФОРМА ПОИСКА НАЧАЛО -->
+        <form class="form-search">
+          <div class="input-append pull-right">
+            <input class="search-query" id="InputSearchProduct" size="16" type="text" placeholder="Введите название товара"><button class="btn" type="button">Поиск</button>
+          </div>
+        </form>
+        <!-- ФОРМА ПОИСКА КОНЕЦ -->
+
+        <!-- БОКОВОЕ МЕНЮ НАЧАЛО -->
+        <nav class="navmenu navmenu-default" role="navigation">
+          <ul class="nav navmenu-nav">
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">Текстуры <b class="caret"></b></a>
+              <ul class="dropdown-menu navmenu-nav" role="menu">
+                <li><a href="">Дерево</a></li>
+                <li><a href="">Металл</a></li>
+                <li><a href="">Бумага</a></li>
+                <li><a href="">Пластик</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">3D Модели <b class="caret"></b></a>
+              <ul class="dropdown-menu navmenu-nav" role="menu">
+                <li><a href="">Пункт 2.1</a></li>
+                <li><a href="">Пункт 2.2</a></li>
+                <li><a href="">Пункт 2.3</a></li>
+                <li><a href="">Пункт 2.4</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">Фотограмметрические сканы <b class="caret"></b></a>
+              <ul class="dropdown-menu navmenu-nav" role="menu">
+                <li><a href="">Пункт 3.1</a></li>
+                <li><a href="">Пункт 3.2</a></li>
+                <li><a href="">Пункт 3.3</a></li>
+                <li><a href="">Пункт 3.4</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">Бесплатное <b class="caret"></b></a>
+              <ul class="dropdown-menu navmenu-nav" role="menu">
+                <li><a href="">Пункт 4.1</a></li>
+                <li><a href="">Пункт 4.2</a></li>
+                <li><a href="">Пункт 4.3</a></li>
+                <li><a href="">Пункт 4.4</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- БОКОВОЕ МЕНЮ КОНЕЦ -->
+
+
+        <!-- Подключаем JavaScript Jasny Bootstrap -->
+<script src="js/jasny-bootstrap.min.js"></script>
