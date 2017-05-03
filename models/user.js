@@ -27,7 +27,23 @@ var schema = new Schema({
     type: String,
     required: true
   },
-  created: {
+  gender: { // Половая принадлежность
+    type: String,
+    required: true,
+    default: "Undefined"
+  },
+  numberInvoice: { // Унаикальный номер счета
+    type: String,
+    unique: true,
+    required: true,
+    default:  'R' + Math.floor(Math.random() * (123456789000 - 5 + 1)) + 5 // Случайной целое 12-13 значное число
+  },
+  balanceInvoice: { // Баланс пользователя
+    type: Number,
+    required: true,
+    default: 0
+  },
+  created: { // Дата регистрации
     type: Date,
     default: Date.now
   }
@@ -74,7 +90,7 @@ schema.statics.authorize = function(username, password, callback) {
   ], callback);
 };
 
-schema.statics.registration = function(username, password, email, callback) {
+schema.statics.registration = function(username, password, email, gender, callback) {
   var User = this;
 
   async.waterfall([ // получаем массив задач и выполняет их одну за другой(рез-ты из одной фун-ии в другую идут)
@@ -83,7 +99,7 @@ schema.statics.registration = function(username, password, email, callback) {
     },
     function(user, callback) {
       // регистрируем нового юзера, если такого нету
-      var user = new User({username: username, password: password, email: email});
+      var user = new User({username: username, password: password, email: email, gender: gender});
       // Сохранить этот объект (нового пользователя) в БД (запишем в коллекцию Users)
       user.save(function(err) {
         if (err) return callback(new AuthError("Такой пользователь уже зарегистрирован"));

@@ -2,7 +2,7 @@
 <% layout('layout/page') -%>
 <% block('title') -%>
 <!-- БЛОК с частями об аккаунте НАЧАЛО-->
-      <div class="cabinet">
+      <form class="form-cabinet" name="cabinet-form">
         <h2 align="center"><strong>Личный кабинет</strong></h2>
         <br>
 
@@ -15,9 +15,13 @@
                   <h4>Добро пожаловать, <%=user.get('username')%></h4>
                   <% if (user.username == "admin" || user.username =="admin2") { %>
                   <p><img src="imagesPersonalArea/adminPhotoProfile.png" alt="" class="round">
-                      <% } else { %>
+                  <% } else if (user.gender == "Мужской") { %>
+                  <p><img src="imagesPersonalArea/standartPhotoProfileMan.png" alt="" class="round">
+                  <% } else if (user.gender == "Женский") { %>
+                  <p><img src="imagesPersonalArea/standartPhotoProfileWomen.png" alt="" class="round">
+                  <% } else { %>
                   <p><img src="imagesPersonalArea/standartPhotoProfile.png" alt="" class="round">
-                    <% } %>
+                   <% } %>
                 </div>
                 <button type="button" class="btn btn-primary">Изменить аватар</button>
 
@@ -35,17 +39,37 @@
 
             <div class="col-md-4">
               <div class="card">
-                <h5>Имя пользователя: <input name="username" value="<%=user.get('username')%>" type="text" class="form-control-personalArea" id="input-username" placeholder="Ваше имя"></h5>
+                <h5>Имя пользователя: <input name="username" value="<%=user.get('username')%>" type="text" class="form-control-personalArea" id="input-username"  disabled></h5>
                 <h5>Изменить пароль: <input name="password" value="" type="text" class="form-control-personalArea" id="input-password" placeholder="Введите новый пароль"></h5>
-                <h5>Ваш email: <input name="email" value="<%=user.get('email')%>" type="text" class="form-control-personalArea" id="input-email" placeholder="Ваш E-mail"></h5>
+                <h5>Ваш email: <input name="email" value="<%=user.get('email')%>" type="text" class="form-control-personalArea" id="input-email"></h5>
+                <h5>Ваш пол:
+                  <SELECT name="gender" type="text" class="form-control-personalArea" id="input-gender" >
+                    <% switch (user.gender) {
+                    case "Мужской": %>
+                      <OPTION><%=user.get('gender')%></OPTION>
+                      <OPTION>Женский</OPTION>
+                      <OPTION>Не определен</OPTION>
+                       <% break; %><%
+                      case "Женский": %>
+                        <OPTION><%=user.get('gender')%></OPTION>
+                        <OPTION>Мужской</OPTION>
+                        <OPTION>Не определен</OPTION>
+                         <% break; %> <%
+                      case "Не определен": %>
+                            <OPTION><%=user.get('gender')%></OPTION>
+                            <OPTION>Мужской</OPTION>
+                            <OPTION>Женский</OPTION>
+                           <% break; %>  <% } %>
+                  </SELECT>
+                </h5>
                 <h5>О себе: <input name="aboutMe" value="" type="text" class="form-control-personalArea-aboutMe" id="input-aboutMe" placeholder="Расскажите о себе"></h5>
-                  <button type="button" class="btn btn-primary">Обновить информацию</button>
+                  <button type="submit" class="btn btn-primary" id="updatePesonalData">Обновить информацию</button>
               </div>
             </div>
             <div class="col-md-4">
               <div class="card">
-                <h5>Номер счета:</h5>
-                <h5>Ваш баланс:</h5>
+                <h5>Номер счета: <%=user.get('numberInvoice')%></h5> 
+                <h5>Ваш баланс: <%=user.get('balanceInvoice')%> VM</h5>
                 <h5><a href="#"><u>ПОПОЛНИТЬ СЧЕТ</u></a></h5>
                 <h5><a href="#"><u>Желаете получать доход от ваших товаров?</u></a></h5>
                 <h5>Дата регистрации: <%=user.get('created')%></h5>
@@ -63,3 +87,12 @@
       <h3 align="center"><strong>Ваши работы</strong></h3>
     </div>
       <!-- БЛОК с частями об аккаунте КОНЕЦ-->
+
+      <script>
+      // Клиентский код //
+      // Человек вводит логин, email, парль
+      $(document.forms['cabinet-form']).on('submit', function() {
+
+        alert("update");
+      });
+      </script>

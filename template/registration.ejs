@@ -3,7 +3,7 @@
 <% layout('layout/page') -%>
 <% block('title') -%>
 
-<form class="form-signin" name="registration-form">
+<form class="form-signin" name="registration_form" onsubmit="return validate_form ( )">
   <h2><center>Регистрация</center></h2>
 	<h5><center>Пожалуйста, расскажите нам о себе.</center></h5>
   <br>
@@ -13,7 +13,15 @@
   </div>
   <h4>Email</h4>
   <div class="form-group">
-      <input name="email" value="" type="email" class="form-control" id="input-email" placeholder="Email">
+      <input name="email" value="" type="type" class="form-control" id="input-email" placeholder="Email">
+  </div>
+  <h4>Ваш пол</h4>
+  <div class="form-group">
+    <SELECT name="gender" value="" type="text" class="form-control" id="input-gender" >
+      <OPTION>Не определен</OPTION>
+      <OPTION>Мужской</OPTION>
+      <OPTION>Женский</OPTION>
+    </SELECT>
   </div>
   <h4>Пароль</h4>
   <div class="form-group">
@@ -21,7 +29,7 @@
   </div>
   <div class="form-group">
     <div class="checkbox">
-      <label><input type="checkbox"> Я согласен с <a href="/ruleSite" target="_blank">правилами сайта</a></label>
+      <label><input type="checkbox" name="terms"> Я согласен с <a href="/ruleSite" target="_blank">правилами сайта</a></label>
     </div>
   </div>
   <div class="form-group">
@@ -37,7 +45,7 @@
 <script>
 // Клиентский код //
 // Человек вводит логин, email, парль
-$(document.forms['registration-form']).on('submit', function() {
+$(document.forms['registration_form']).on('submit', function() {
   var form = $(this);
 
   $('.error', form).html('');

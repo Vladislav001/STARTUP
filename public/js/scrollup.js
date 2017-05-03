@@ -1,6 +1,6 @@
 $(function() {
   $(window).scroll(function() {
-    if($(this).scrollTop() > 650) {
+    if($(this).scrollTop() > 350) {
       $('#scrollup').fadeIn();
     } else {
       $('#scrollup').fadeOut();

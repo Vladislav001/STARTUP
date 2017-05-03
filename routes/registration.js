@@ -14,8 +14,9 @@ exports.post = function(req, res, next) {
   var username = req.body.username;// P.S req.body - нестандартное св-во, но в app.js есть middleware bodyParser(аналог)
   var password = req.body.password;// т.к он подключен до роута, то к моменту работы роута, bodyParser гарантированно прочитал все post данные
   var email = req.body.email; // разобрал их и записал все поля формы в соответствующие сва-ва req.body
+  var gender = req.body.gender; // разобрал их и записал все поля формы в соответствующие сва-ва req.body
 
-  User.registration(username, password, email, function(err, user) {
+  User.registration(username, password, email, gender, function(err, user) {
     if (err) {
       if (err instanceof AuthError) { // если это ошибка и AuthError
         return next(new HttpError(403, err.message)); //403 - отказ регистрации

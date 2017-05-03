@@ -3,8 +3,8 @@
 <% layout('layout/page') -%>
 <% block('title') -%>
 
-<form class="form-signin" name="login-form">
-  <h2><center>Авторизация</center></h2>
+<form class="form-signin" name="login_form">
+  <h2><center>Вход</center></h2>
   <h5><center>Пожалуйста, войдите в свой аккаунт.</center></h5>
   <div class="form-group">
     <input name="username" value="name" type="text" class="form-control" id="input-username" placeholder="Имя">
@@ -31,7 +31,7 @@
 <script>
 // Клиентский код //
 // Человек вводит логин, пароль
-  $(document.forms['login-form']).on('submit', function() {
+  $(document.forms['login_form']).on('submit', function() {
     var form = $(this);
 
     $('.error', form).html('');
