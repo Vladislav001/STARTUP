@@ -109,6 +109,14 @@ schema.statics.registration = function(username, password, email, gender, callba
   ], callback);
 };
 
+schema.statics.updatePersonalData = function( username, email, callback) {
+  var User = this;
+
+    User.findOneAndUpdate(username, { $set: { username: 'Name update', email: 'Email update' }}, callback);
+  };
+
+
+
 // Для того, чтобы наш класс умел сохранаться и искаться в БД
 // Примечание: как только объявляем model - mongoose создает все индексы, которые нужны для поодержки schema
 exports.User = mongoose.model('User', schema); // генерируется коллекция Users(добавляется 's')

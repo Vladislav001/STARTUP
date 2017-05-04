@@ -128,7 +128,7 @@ app.get('/user/:id', function(req, res, next) {
 // Очищаем Базу Данных
 app.get('/dropDatabase', function(req, res) {
   mongoose.connection.db.dropDatabase(); // Очистить ВСЮ БД
-  res.render('./personalArea'); // Здесь переход на БД пользователей надо бы сделать
+  res.redirect('/'); // перенаправляем на главную
 });
 /////////////////////////////////////////////////
 
