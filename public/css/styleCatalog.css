@@ -15,8 +15,8 @@
 }
 
 /*СТИЛИ КАТАЛОГА НАЧАЛО*/
-.input-append {
-	margin-right: 55px;
+.form-search {
+	margin-left: 260px;
 }
 .search-query{
 	width: 900px;
@@ -32,27 +32,50 @@
 	border-radius: 2px ;
 }*/
 .navmenu {
-width: 200px;
+width: 180px;
 padding-left: 55px;
-padding-top: 30px;
+padding-top: 0px;
 }
 /* ОТКРЫВАЕТ ВЕРТИКАЛЬНОЕ МЕНЮ ПРИ НАВЕДЕНИИ-ПОКА ОСТАВИТЬ
 .dropdown:hover > .dropdown-menu {
     display: block;
 }*/
-.navmenu li a{
-	padding: 5px;
+.dropdown-inside
+{
+   display: none;
 }
-.dropdown-menu li a{
-	padding: 2px;
+.dropdown-left:focus ~ .dropdown-inside,
+.dropdown-left:active ~ .dropdown-inside,
+.dropdown-inside:hover
+{
+   display: block;
 }
 
+ul.dropdown li { position: relative; }
+ ul.dropdown,
+ ul.dropdown-inside {
+ list-style-type: none;
+ padding: 0;
+ }
+ ul.dropdown-inside {
+ 	position: absolute;
+ 	z-index: 10000;
+ }
+ ul.dropdown li.dropdown-left {
+ display: inline;
+ float: left;
+ margin: 0 1px 0 0;
+ }
+ ul.dropdown li.dropdown-left a {
+ padding: 3px 10px 4px;
+ display: block;
+ }
+ ul.dropdown a.dropdown-left:hover { background: #fff; }
 
-
-
+ ul.dropdown .dropdown-inside { background: #fff; }
+ ul.dropdown .dropdown-inside a:hover { background: #B0BEC5; }
 
 /*СТИЛИ КАТАЛОГА КОНЕЦ*/
-
 
 
 

@@ -1,4 +1,4 @@
-// Модуль регистрации
+// Модуль обновления личных данных
 
 var User = require('../models/user').User;
 var HttpError = require('../error').HttpError;
@@ -11,9 +11,9 @@ exports.post = function(req, res, next) {
     // P.S req.body - нестандартное св-во, но в app.js есть middleware bodyParser(аналог)
   // т.к он подключен до роута, то к моменту работы роута, bodyParser гарантированно прочитал все post данные
   var username = req.user.username;
-  var email =  "Emdd3 3333123"; // разобрал их и записал все поля формы в соответствующие сва-ва req.body
+  var email =  "putEdmdd133"; // разобрал их и записал все поля формы в соответствующие сва-ва req.body
   var gender = req.user.gender;
-  var updateGender;
+  var updateGender = req.body.gender; // не пашет!!!!
 
 
    // разобрал их и записал все поля формы в соответствующие сва-ва req.body
@@ -29,7 +29,7 @@ exports.post = function(req, res, next) {
 
     //req.session.user = user._id; //сохранить _id посетителя в сесиии и ответить 200
     //res.send({}); // ответ(отправить объект) - p/s это мб объект с информацией о пользователе
-    res.redirect('/personalArea'); // перенаправить посетителя на главную
+    res.redirect('/personalArea'); // обновим ЛК
 
     console.log("This USER = " + username,  email, gender, updateGender);
   });

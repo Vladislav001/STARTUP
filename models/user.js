@@ -32,6 +32,11 @@ var schema = new Schema({
     required: true,
     default: "Undefined"
   },
+  aboutMySelf: {
+    type: Array,
+    required: true,
+    default: "Это мой профиль"
+  },
   numberInvoice: { // Унаикальный номер счета
     type: String,
     unique: true,
