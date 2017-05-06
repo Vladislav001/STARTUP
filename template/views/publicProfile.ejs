@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="css/stylePersonalArea.css">
+<% layout('layout/page') -%>
+<% block('title') -%>
+<!-- БЛОК с частями об аккаунте НАЧАЛО-->
+  <form class="form-cabinet" name="cabinet_form">
+    <h2 align="center"><strong>Профиль <%=user.get('username')%></strong></h2>
+    <br>
+
+  <div class="container">
+    <div class="row">
+      <div class="card-row clearfix">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="description">
+              <% if (user.username == "admin" || user.username =="admin2") { %>
+              <p><img src="imagesPersonalArea/adminPhotoProfile.png" alt="" class="round">
+              <% } else if (user.gender == "Мужской") { %>
+              <p><img src="imagesPersonalArea/standartPhotoProfileMan.png" alt="" class="round">
+              <% } else if (user.gender == "Женский") { %>
+              <p><img src="imagesPersonalArea/standartPhotoProfileWomen.png" alt="" class="round">
+              <% } else { %>
+              <p><img src="imagesPersonalArea/standartPhotoProfile.png" alt="" class="round">
+               <% } %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <h5>Имя пользователя: <%=user.get('gender')%></h5>
+            <h5>Email <%=user.get('username')%>: <%=user.get('email')%></h5>
+            <h5>Пол <%=user.get('username')%>: <%=user.get('gender')%> </h5>
+            <h5>О <%=user.get('username')%>: </h5>
+
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+  <br><br><br>
+  <h3 align="center"><strong>Покупки <%=user.get('username')%></strong></h3>
+
+
+  <br>
+  <h3 align="center"><strong>Работы <%=user.get('username')%></strong></h3>
+</div>
+  <!-- БЛОК с частями об аккаунте КОНЕЦ-->

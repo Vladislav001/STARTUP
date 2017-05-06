@@ -74,7 +74,8 @@
             <h5><a href="#"><u>ПОПОЛНИТЬ СЧЕТ</u></a></h5>
             <h5><a href="#"><u>Желаете получать доход от ваших товаров?</u></a></h5>
             <h5>Дата регистрации: <%=user.get('created')%></h5>
-            <h5>Список пользователей: <a href="#"><%=user.get('username')%></a></h5>
+            <h5>Как выглядит ваш публичный профиль: <a href="/publicProfile"><%=user.get('username')%></a></h5>
+            <h5>Список пользователей: <a href="/#">СПИСОК</a></h5>
           </div>
         </div>
       </div>
@@ -89,38 +90,3 @@
   <h3 align="center"><strong>Ваши работы</strong></h3>
 </div>
   <!-- БЛОК с частями об аккаунте КОНЕЦ-->
-
-  <script>
-  // Клиентский код // ВОЗМОЖНО ТУТ НЕ НУЖНО!!!!!!!!!!!!!!!!!!!!!!!!!!
-  // Человек вводит логин, email, парль
-  $(document.forms['cabinet_form']).on('submit', function() {
-    var form = $(this);
-
-    $('.error', form).html('');
-    $(":submit", form).button("loading");
-
-    // Этот логин, email, пароль отправляются на сервер
-    $.ajax({
-      url: "/updatePersonalData", // роут: require('./registration').post
-      method: "POST",
-      data: form.serialize(),
-      complete: function() {
-        $(":submit", form).button("reset");
-      },
-      statusCode: {
-        // если ответ сервера 200 - перенаправляем человека в личный кабинет(успешно создали нового пользователя)
-        200: function() {
-
-          form.html("Вы успешно обновились").addClass('alert-success');
-          window.location.href = "/personalArea";
-        },
-        // если 403 - высвечивается ошибка(уже есть такой пользователь)
-        403: function(jqXHR) {
-          var error = JSON.parse(jqXHR.responseText);
-          $('.error', form).html(error.message);
-        }
-      }
-    });
-    return false;
-  });
-  </script>

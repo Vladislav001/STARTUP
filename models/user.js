@@ -109,10 +109,13 @@ schema.statics.registration = function(username, password, email, gender, callba
   ], callback);
 };
 
-schema.statics.updatePersonalData = function(username, email, gender, callback) {
+
+
+schema.statics.updatePersonalData = function(username, email, gender,  callback) {
   var User = this;
 
     User.findOneAndUpdate({username}, { $set: {email: email, gender: gender}},callback);
+
     console.log("This USER in Users= " + username,  email, gender);
   };
 
