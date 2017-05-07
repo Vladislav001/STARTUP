@@ -2,7 +2,7 @@
 <% layout('layout/page') -%>
 <% block('title') -%>
 <!-- БЛОК с частями об аккаунте НАЧАЛО-->
-  <form class="form-cabinet" name="cabinet_form">
+
     <h2 align="center"><strong>Личный кабинет</strong></h2>
     <br>
 
@@ -36,7 +36,7 @@
 
           </div>
         </div>
-
+        <form class="form-cabinet" name="cabinet_form">
         <div class="col-md-4">
           <div class="card">
             <h5>Имя пользователя: <input name="username" value="<%=user.get('username')%>" type="text" class="form-control-personalArea" id="input-username" disabled ></h5>
@@ -62,8 +62,8 @@
                        <% break; %>  <% } %>
               </SELECT>
             </h5>
-            <h5>О себе: <input name="aboutMe" value="<%=user.get('aboutMySelf')%>" type="text" class="form-control-personalArea-aboutMe" id="input-aboutMe" placeholder="Расскажите о себе"></h5>
-              <a href="" onclick="$('body').append('<form id=\'submitme\' method=\'POST\' action=\'/updatePersonalData\'></form>');$('#submitme').submit();return false;" title="Обновить">  <button type="submit" class="btn btn-primary" id="updatePesonalData">Обновить информацию</button></a>
+            <h5>О себе: <input name="aboutMySelf" value="<%=user.get('aboutMySelf')%>" type="text" class="form-control-personalArea-aboutMe" id="input-aboutMe" placeholder="Расскажите о себе"></h5>
+            <button type="submit" class="btn btn-primary" id="updatePesonalData">Обновить информацию</button>
           </div>
         </div>
         <div class="col-md-4">
@@ -73,7 +73,7 @@
             <h5><a href="#"><u>ПОПОЛНИТЬ СЧЕТ</u></a></h5>
             <h5><a href="#"><u>Желаете получать доход от ваших товаров?</u></a></h5>
             <h5>Дата регистрации: <%=user.get('created')%></h5>
-            <h5>Как выглядит ваш публичный профиль: <a href="/publicProfile"><%=user.get('username')%></a></h5>
+            <h5>Как выглядит ваш публичный профиль: <a href="/publicProfile",><%=user.get('username')%></a></h5>
             <h5>Список пользователей: <a href="/#">СПИСОК</a></h5>
           </div>
         </div>

@@ -33,7 +33,7 @@ var schema = new Schema({
     default: "Undefined"
   },
   aboutMySelf: {
-    type: Array,
+    type: String,
     required: true,
     default: "Это мой профиль"
   },
@@ -115,13 +115,13 @@ schema.statics.registration = function(username, password, email, gender, callba
 };
 
 
-
-schema.statics.updatePersonalData = function(username, email, gender,  callback) {
+// Обновление данных в личном кабинете
+schema.statics.updatePersonalData = function(username, updateEmail, updateGender, updateAboutMySelf, callback) {
   var User = this;
 
-    User.findOneAndUpdate({username}, { $set: {email: email, gender: gender}},callback);
+    User.findOneAndUpdate({username}, { $set: {email: updateEmail, gender: updateGender, aboutMySelf: updateAboutMySelf}},callback);
 
-    console.log("This USER in Users= " + username,  email, gender);
+    //console.log("This USER in Users= " + username,  email, gender);
   };
 
 

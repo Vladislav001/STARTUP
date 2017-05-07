@@ -13,5 +13,6 @@ module.exports = function(app) {
   app.get('/personalArea', checkAuth, require('./personalArea').get); // вставили middleware проверки авторизованности пользователя
 
   app.post('/updatePersonalData', require('./updatePersonalData').post);
+  
   app.get('/publicProfile', require('./publicProfile').get); // обрабатываемая корневая страница(начальная)
 };
