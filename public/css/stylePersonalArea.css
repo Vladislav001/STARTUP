@@ -148,6 +148,16 @@ display: none; /* спрятать блок */
 cursor: pointer;
 }
 
+/*Для редактирования аватара профиля (выбор из дефолтных)*/
+#avatarAdmin {
+  display: block;
+}
+#avatarAdmin_2 {
+  display: none;
+}
+#avatarAdmin_3 {
+  display: none;
+}
 
 
 

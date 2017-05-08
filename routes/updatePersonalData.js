@@ -11,13 +11,15 @@ exports.post = function(req, res, next) {
   // т.к он подключен до роута, то к моменту работы роута, bodyParser гарантированно прочитал все post данные
   // разобрал их и записал все поля формы в соответствующие сва-ва req.body
 
-  var username = req.user.username; // получаем имя пользователя по его полЮ!!!
+  var id = req.user.id;
+  var updateUsername = req.body.username; // получаем имя пользователя по его полЮ!!!
   var updateEmail = req.body.email; // получаем email пользователя полЮ ввода!!!
   var updateGender = req.body.gender;
   var updateAboutMySelf = req.body.aboutMySelf;
+  var updateMyAvatar = req.body.myAvatar;
 
    // разобрал их и записал все поля формы в соответствующие сва-ва req.body
-  User.updatePersonalData(username, updateEmail, updateGender, updateAboutMySelf, function(err, user) {
+  User.updatePersonalData(id, updateUsername, updateEmail, updateGender, updateAboutMySelf, updateMyAvatar, function(err, user) {
 
     if (err) {
       if (err instanceof AuthError) { // если это ошибка и AuthError
@@ -31,7 +33,7 @@ exports.post = function(req, res, next) {
     //res.send({}); // ответ(отправить объект) - p/s это мб объект с информацией о пользователе
     res.redirect('/personalArea'); // обновим ЛК
 
-    //console.log("This USER = " + username, updateGender, updateaboutMySelf);
+    console.log("This AVATAR = " + updateMyAvatar);
   });
 
 };
