@@ -6,6 +6,7 @@
     <h2 align="center"><strong>Личный кабинет</strong></h2>
     <br>
 
+<form class="form-cabinet" name="cabinet_form">
   <div class="container">
     <div class="row">
       <div class="card-row clearfix">
@@ -15,18 +16,31 @@
               <h4>Добро пожаловать, <%=user.get('username')%></h4>
               <% if (user.username == "admin" || user.username =="admin2") { %>
 
+                <!--
+                <p><img src="imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_1"></p>
+                <p><img src="imagesPersonalArea/2_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_2"></p>
+                <p><img src="imagesPersonalArea/3_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_3"></p>
+              -->
+
+
+
                 <% switch (user.myAvatar) {
                 case "1": %>
-                  <p><img src="imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round"></p>
+                  <p><img src="imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_1"></p>
+                  <p><img src="imagesPersonalArea/2_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_2"></p>
+                  <p><img src="imagesPersonalArea/3_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_3"></p>
                    <% break; %><%
                   case "2": %>
-                  <p><img src="imagesPersonalArea/2_adminPhotoProfile.png" alt="" class="round"></p>
+                  <p><img src="imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_1"></p>
+                  <p><img src="imagesPersonalArea/2_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_2"></p>
+                  <p><img src="imagesPersonalArea/3_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_3"></p>
                      <% break; %> <%
                   case "3": %>
-                  <p><img src="imagesPersonalArea/3_adminPhotoProfile.png" alt="" class="round"></p>
+                  <p><img src="imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_1"></p>
+                  <p><img src="imagesPersonalArea/2_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_2"></p>
+                  <p><img src="imagesPersonalArea/3_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_3"></p>
                        <% break; %>
                   <% } %>
-
 
               <% } else if (user.gender == "Мужской") { %>
 
@@ -44,13 +58,27 @@
                <% } %>
             </div>
 
-            <form class="form-cabinet" name="cabinet_form">
+
             <h5>Текущий аватар: <%=user.get('myAvatar')%>
             <h5>Готовый аватар:
-            <select name="myAvatar" type="text" class="form-control-personalArea" id="myAvatar">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+
+            <select name="myAvatar" type="text" class="form-control-personalArea target" id="myAvatar">
+            <% switch (user.myAvatar) {
+            case "1": %>
+              <OPTION><%=user.get('myAvatar')%></OPTION>
+              <OPTION>2</OPTION>
+              <OPTION>3</OPTION>
+               <% break; %><%
+              case "2": %>
+                <OPTION><%=user.get('myAvatar')%></OPTION>
+                <OPTION>1</OPTION>
+                <OPTION>3</OPTION>
+                 <% break; %> <%
+              case "3": %>
+                    <OPTION><%=user.get('myAvatar')%></OPTION>
+                    <OPTION>1</OPTION>
+                    <OPTION>2</OPTION>
+                   <% break; %>  <% } %>
             </select>
             </h5>
 
@@ -70,14 +98,14 @@
 
         <div class="col-md-4">
           <div class="card">
-            <h5>Имя пользователя: <input name="username" value="<%=user.get('username')%>" type="text" class="form-control-personalArea" id="input-username"  ></h5>
+            <h5>Имя пользователя: <input name="username" value="<%=user.get('username')%>" type="text" class="form-control-personalArea" id="input-username" disabled></h5>
             <h5>Изменить пароль: <input name="password" value="" type="text" class="form-control-personalArea" id="input-password" placeholder="Введите новый пароль"></h5>
             <h5>Ваш email: <input name="email" value="<%=user.get('email')%>" type="text" class="form-control-personalArea" id="input-email"></h5>
             <h5>Ваш пол:
               <SELECT name="gender" type="text" class="form-control-personalArea" id="input-gender" >
                 <% switch (user.gender) {
                 case "Мужской": %>
-                  <OPTION><%=user.get('gender')%></OPTION>
+                  <OPTION ><%=user.get('gender')%></OPTION>
                   <OPTION>Женский</OPTION>
                   <OPTION>Не определен</OPTION>
                    <% break; %><%
@@ -159,7 +187,27 @@ $(document.forms['cabinet_form']).on('submit', function() {
 <script>
 // Пока не получается применить такой способ, если в ejs пихаем
 $("#myAvatar").click(function(){
-  var choiseAvatar = $("#myAvatar").val();
+  var choiseAvatar = "2";
+  choiseAvatar = $("#myAvatar").val();
+
+/*
+  if(choiseAvatar == "1") {
+    $("#avatarAdmin_1").css("display","block");
+    $("#avatarAdmin_2").css("display","none");
+    $("#avatarAdmin_3").css("display","none");
+  } else if (choiseAvatar == "2") {
+    $("#avatarAdmin_1").css("display","none");
+    $("#avatarAdmin_2").css("display","block");
+    $("#avatarAdmin_3").css("display","none");
+  } else if (choiseAvatar == "3") {
+    $("#avatarAdmin_1").css("display","none");
+    $("#avatarAdmin_2").css("display","none");
+    $("#avatarAdmin_3").css("display","block");
+  } else {
+    $("#avatarAdmin_2").css("display","block");
+  }
+  */
+
 
   switch (choiseAvatar) {
     case "1":
@@ -178,7 +226,7 @@ $("#myAvatar").click(function(){
     $("#avatarAdmin_3").css("display","block");
       break;
   }
-
+  console.log(choiseAvatar);
 });
 
 

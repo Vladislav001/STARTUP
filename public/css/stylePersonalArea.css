@@ -149,8 +149,8 @@ cursor: pointer;
 }
 
 /*Для редактирования аватара профиля (выбор из дефолтных)*/
-#avatarAdmin {
-  display: block;
+#avatarAdmin_1 {
+  display: none;
 }
 #avatarAdmin_2 {
   display: none;

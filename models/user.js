@@ -40,6 +40,7 @@ var schema = new Schema({
   myAvatar: {
     type: String,
     required: true,
+      default: "1"
   },
   numberInvoice: { // Унаикальный номер счета
     type: String,
@@ -120,12 +121,11 @@ schema.statics.registration = function(username, password, email, gender, callba
 
 
 // Обновление данных в личном кабинете
-schema.statics.updatePersonalData = function(id, updateUsername, updateEmail, updateGender, updateAboutMySelf, updateMyAvatar, callback) {
+schema.statics.updatePersonalData = function(id, updateEmail, updateGender, updateAboutMySelf, updateMyAvatar, callback) {
   var User = this;
 
     User.findOneAndUpdate({_id: id}, { $set:
-      {username: updateUsername,
-        email: updateEmail,
+      {email: updateEmail,
          gender: updateGender,
           aboutMySelf: updateAboutMySelf,
            myAvatar:updateMyAvatar}},

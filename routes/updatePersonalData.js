@@ -19,7 +19,7 @@ exports.post = function(req, res, next) {
   var updateMyAvatar = req.body.myAvatar;
 
    // разобрал их и записал все поля формы в соответствующие сва-ва req.body
-  User.updatePersonalData(id, updateUsername, updateEmail, updateGender, updateAboutMySelf, updateMyAvatar, function(err, user) {
+  User.updatePersonalData(id, updateEmail, updateGender, updateAboutMySelf, updateMyAvatar, function(err, user) {
 
     if (err) {
       if (err instanceof AuthError) { // если это ошибка и AuthError
