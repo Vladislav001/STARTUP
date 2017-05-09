@@ -22,13 +22,13 @@
                 <p><img src="imagesPersonalArea/3_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_3"></p>
               -->
 
-
-
                 <% switch (user.myAvatar) {
                 case "1": %>
+
                   <p><img src="imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_1"></p>
                   <p><img src="imagesPersonalArea/2_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_2"></p>
                   <p><img src="imagesPersonalArea/3_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_3"></p>
+
                    <% break; %><%
                   case "2": %>
                   <p><img src="imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_1"></p>
@@ -59,7 +59,7 @@
             </div>
 
 
-            <h5>Текущий аватар: <%=user.get('myAvatar')%>
+            <h5>Установленный аватар: <%=user.get('myAvatar')%>
             <h5>Готовый аватар:
 
             <select name="myAvatar" type="text" class="form-control-personalArea target" id="myAvatar">
@@ -185,29 +185,15 @@ $(document.forms['cabinet_form']).on('submit', function() {
 
 
 <script>
-// Пока не получается применить такой способ, если в ejs пихаем
+// Имитация клика на элемент
+setTimeout(function(){
+  $('#myAvatar').trigger('click');
+}, 0);
+
+// Отрисовка аватара, в зависимости от фокуса на выпадающем списке
 $("#myAvatar").click(function(){
-  var choiseAvatar = "2";
-  choiseAvatar = $("#myAvatar").val();
 
-/*
-  if(choiseAvatar == "1") {
-    $("#avatarAdmin_1").css("display","block");
-    $("#avatarAdmin_2").css("display","none");
-    $("#avatarAdmin_3").css("display","none");
-  } else if (choiseAvatar == "2") {
-    $("#avatarAdmin_1").css("display","none");
-    $("#avatarAdmin_2").css("display","block");
-    $("#avatarAdmin_3").css("display","none");
-  } else if (choiseAvatar == "3") {
-    $("#avatarAdmin_1").css("display","none");
-    $("#avatarAdmin_2").css("display","none");
-    $("#avatarAdmin_3").css("display","block");
-  } else {
-    $("#avatarAdmin_2").css("display","block");
-  }
-  */
-
+var choiseAvatar = $("#myAvatar").val();
 
   switch (choiseAvatar) {
     case "1":
@@ -226,8 +212,5 @@ $("#myAvatar").click(function(){
     $("#avatarAdmin_3").css("display","block");
       break;
   }
-  console.log(choiseAvatar);
 });
-
-
 </script>

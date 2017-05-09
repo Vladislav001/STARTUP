@@ -40,7 +40,7 @@ var schema = new Schema({
   myAvatar: {
     type: String,
     required: true,
-      default: "1"
+    default: "1"
   },
   numberInvoice: { // Унаикальный номер счета
     type: String,
