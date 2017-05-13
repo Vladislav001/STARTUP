@@ -66,7 +66,7 @@ app.use(app.router);
 // Подключаем маршруты к приложению
 require('./routes')(app); // подключаем этот модуль и передаем ему app
 
-//static - middleware (стандартный ) - если не какие раннее middleware не обработали запрос,
+//static - middleware (стандартный ) - если никакие раннее middleware не обработали запрос,
 // то управление передается этому - смотрит если соотвутствующий файл в директории
 app.use(express.static(path.join(__dirname, './public')));
 
@@ -106,6 +106,31 @@ app.get('/users', function(req, res, next) {
   })
 });
 
+
+////////////////////////////////////////////////////////////////
+// Получение профиля юзера по его адресу
+
+// получаем из адреса id юзера /id... (например http://localhost:3000/id59177e626aaba40fb049bfd3)
+app.get("/id:idTag", function(req, res, next) {
+
+  // ищем окумент в коллекции юзеров по данному id
+  User.findById(req.params.idTag, function(err, user) {
+
+    if (err) return next(err);
+
+    // рисуем профиль юзера с данными из его документа 
+    res.render('publicUserProfile', 
+    	{USERNAME: user.username,
+    	 GENDER: user.gender,
+    	 EMAIL: user.email,
+    	 ABOUT: user.aboutMySelf,
+    	 CREATED: user.created
+    	});
+  });
+});
+
+
+/*
 // Получаем json пользователя по его id
 app.get('/user/:id', function(req, res, next) {
   // Проверим id это или нет(чтобы точно знать) - подключили ObjectId
@@ -124,6 +149,9 @@ app.get('/user/:id', function(req, res, next) {
     res.json(user);
   });
 });
+*/
+
+
 
 // Очищаем Базу Данных
 app.get('/dropDatabase', function(req, res) {
