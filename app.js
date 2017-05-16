@@ -1,3 +1,4 @@
+
 var express = require('express'); // фреймворк для Node.Js
 var http = require('http');
 var path = require('path');
@@ -94,6 +95,8 @@ app.use(express.static(path.join(__dirname, './public')));
       }
     });
 
+    
+
 /////////////////////////////////////////
 // Если хотим посмотреть БД пользователей в JSON-формате(плагин для хрома(JSONView) - для красоты вывода)
 var User = require('./models/user').User;
@@ -107,11 +110,20 @@ app.get('/users', function(req, res, next) {
 });
 
 
+
+
 ////////////////////////////////////////////////////////////////
 // Получение профиля юзера по его адресу
 
 // получаем из адреса id юзера /id... (например http://localhost:3000/id59177e626aaba40fb049bfd3)
 app.get("/id:idTag", function(req, res, next) {
+
+  // Проверим id это или нет - подключили ObjectId
+  try {
+      var id = new ObjectId(req.params.idTag);
+  } catch(err) {
+    return next(404);
+  }
 
   // ищем окумент в коллекции юзеров по данному id
   User.findById(req.params.idTag, function(err, user) {
@@ -129,36 +141,14 @@ app.get("/id:idTag", function(req, res, next) {
   });
 });
 
-
-/*
-// Получаем json пользователя по его id
-app.get('/user/:id', function(req, res, next) {
-  // Проверим id это или нет(чтобы точно знать) - подключили ObjectId
-  try {
-      var id = new ObjectId(req.params.id);
-  } catch (e) {
-    return next(404);
-  }
-
-  // Если все хорошо - то тут уже используем id
-  User.findById(id, function(err, user) {
-    if (err) return next (err);
-    if (!user) {
-      return next(404);
-    }
-    res.json(user);
-  });
-});
-*/
-
-
-
 // Очищаем Базу Данных
 app.get('/dropDatabase', function(req, res) {
   mongoose.connection.db.dropDatabase(); // Очистить ВСЮ БД
   res.redirect('/'); // перенаправляем на главную
 });
 ////////////////////////////////////////////////
+
+
 
 
 // Вешаем http сервер -> express будет обрабатывать все приходящие запросы
