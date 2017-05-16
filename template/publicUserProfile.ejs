@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="css/stylePersonalArea.css">
+<% layout('layout/page') -%>
+<% block('title') -%>
+<!-- БЛОК с частями об аккаунте НАЧАЛО-->
+  <form class="form-cabinet" name="cabinet_form">
+    <h2 align="center"><strong>Профиль: <%=USERNAME%></strong></h2>
+    <br>
+
+  <div class="container">
+    <div class="row">
+      <div class="card-row clearfix">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="description">
+    
+              <%if (GENDER == "Мужской") { %>
+              <p><img src="../imagesPersonalArea/standartPhotoProfileMan.png" alt="" class="round"></p>
+              <% } else if (GENDER == "Женский") { %>
+              <p><img src="../imagesPersonalArea/standartPhotoProfileWomen.png" alt="" class="round"></p>
+              <% } else { %>
+              <p><img src="../imagesPersonalArea/standartPhotoProfile.png" alt="" class="round"></p>
+               <% } %>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <h5>Email: <%=EMAIL%></h5>
+            <h5>Пол: <%=GENDER%> </h5>
+            <h5>О себе: <%=ABOUT%></h5>
+            <h5>Дата регистрации: <%=CREATED%></h5>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+  <br><br><br>
+  <h3 align="center"><strong>Покупки: </strong></h3>
+
+
+  <br>
+  <h3 align="center"><strong>Работы: </strong></h3>
+</div>
+  <!-- БЛОК с частями об аккаунте КОНЕЦ-->
+
