@@ -4,6 +4,9 @@ module.exports = function(app) {
   // Каждый 'get' подключает соотсветсвующий модуль и вызывает его метод 'get'
   app.get('/', require('./home').get); // обрабатываемая корневая страница(начальная)
   app.get('/catalog', require('./catalog').get);
+  app.get('/faq', require('./faq').get);
+  app.get('/contacts', require('./contacts').get);
+  app.get('/aboutUs', require('./aboutUs').get);
   app.get('/login', require('./login').get);
   app.post('/login', require('./login').post); // при poste на login, подключаем post этого модуля()
   app.get('/registration', require('./registration').get);

@@ -12,8 +12,23 @@
         <div class="col-md-4">
           <div class="card">
             <div class="description">
-    
-              <%if (GENDER == "Мужской") { %>
+
+              <% if (USERNAME == "admin" || USERNAME =="admin2") { %>
+
+                <% switch(MYAVATAR) {
+                case "1": %>
+                  <p><img src="../imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round" ></p>
+                   <% break; %><%
+                  case "2": %>
+                  <p><img src="../imagesPersonalArea/2_adminPhotoProfile.png" alt="" class="round"  ></p>
+                     <% break; %> <%
+                  case "3": %>
+                  <p><img src="../imagesPersonalArea/3_adminPhotoProfile.png" alt="" class="round" ></p>
+                       <% break; %>
+                   <% } %>
+
+
+              <% } else if (GENDER == "Мужской") { %>
               <p><img src="../imagesPersonalArea/standartPhotoProfileMan.png" alt="" class="round"></p>
               <% } else if (GENDER == "Женский") { %>
               <p><img src="../imagesPersonalArea/standartPhotoProfileWomen.png" alt="" class="round"></p>
