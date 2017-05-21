@@ -94,29 +94,12 @@ app.use(express.static(path.join(__dirname, './public')));
       }
     });
 
-
-
-/////////////////////////////////////////
 // Если хотим посмотреть БД пользователей в JSON-формате(плагин для хрома(JSONView) - для красоты вывода)
 var User = require('./models/user').User;
 
-// Получаем json - всех пользователей
-app.get('/users', function(req, res, next) {
-  User.find({}, function(err, users) {
-    if (err) return next(err);
-    res.json(users);
-  })
-});
-
-
-
-
-////////////////////////////////////////////////////////////////
 // Получение профиля юзера по его адресу
-
 // получаем из адреса id юзера /id... (например http://localhost:3000/id59177e626aaba40fb049bfd3)
 app.get("/id:idTag", function(req, res, next) {
-
   // Проверим id это или нет - подключили ObjectId
   try {
       var id = new ObjectId(req.params.idTag);
@@ -126,7 +109,6 @@ app.get("/id:idTag", function(req, res, next) {
 
   // ищем окумент в коллекции юзеров по данному id
   User.findById(req.params.idTag, function(err, user) {
-
     if (err) return next(err);
 
     // рисуем профиль юзера с данными из его документа
@@ -140,16 +122,6 @@ app.get("/id:idTag", function(req, res, next) {
       	});
     });
   });
-
-// Очищаем Базу Данных
-app.get('/dropDatabase', function(req, res) {
-  mongoose.connection.db.dropDatabase(); // Очистить ВСЮ БД
-  res.redirect('/'); // перенаправляем на главную
-});
-////////////////////////////////////////////////
-
-
-
 
 // Вешаем http сервер -> express будет обрабатывать все приходящие запросы
 /// config.get получает значение из специального скрытого свойства объекта config
