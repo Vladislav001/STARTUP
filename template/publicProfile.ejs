@@ -5,7 +5,7 @@
   <form class="form-cabinet" name="cabinet_form">
     <h2 align="center"><strong>Профиль: <%=user.get('username')%></strong></h2>
     <br>
-
+    
   <div class="container">
     <div class="row">
       <div class="card-row clearfix">
@@ -24,7 +24,9 @@
                   case "3": %>
                   <p><img src="../imagesPersonalArea/3_adminPhotoProfile.png" alt="" class="round" ></p>
                        <% break; %>
-                   <% } %>
+                   <% } %
+
+
 
 
               <% } else if (user.gender == "Мужской") { %>

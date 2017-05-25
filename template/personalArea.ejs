@@ -10,6 +10,13 @@
   <div class="container">
     <div class="row">
       <div class="card-row clearfix">
+        <% if (user.username == "admin" || user.username =="admin2") { %>
+          <div class="users-bar">
+            <% for(var i=0; i<links.length; i++) { %>
+              <div class="user-bar"><a href="<%=links[i]%>"><%=usernames[i]%></a></div>
+            <% } %>
+          </div>
+        <% } %>
         <div class="col-md-4">
           <div class="card">
             <div class="description">
