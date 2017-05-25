@@ -39,7 +39,7 @@ padding-top: 5px;
     box-shadow: 0 0 7px #666; /* Параметры тени */
 }
 .btn-primary{
-	margin-left: 82px;
+	/*margin-left: 82px;*/
   color: white;
 }
 .changeAvatar{
@@ -88,7 +88,7 @@ padding-top: 5px;
 footer {
 	margin-bottom: 0px;
   margin-top: 0px;
-	height: 260px;
+	  height: 300px;
 	background-color: white;
 	/*background-image: url("footer.jpg");
 	background-size: cover;*/
@@ -96,6 +96,7 @@ footer {
 footer .footer-left{
 	margin-left: 60px;
 	float: left;
+
 }
 .footer-icons li a{
 	margin-top: 0px;
@@ -115,7 +116,7 @@ footer .footer-right  a {
 	color:black;
 }
 .footer-bottom-left{
-	margin-left: 45px;
+
 	float:left;
 }
 .footer-bottom-left  a {
@@ -125,7 +126,6 @@ footer .footer-right  a {
 	color:red;
 }
 .footer-bottom-right{
-	margin-right: 45px;
 	float: right;
 }
 .footer-bottom-right a{
@@ -137,7 +137,7 @@ footer .footer-right  a {
 
 #scrollup {
 position: fixed; /* фиксированная позиция */
-opacity: 1.0; /* прозрачность */
+opacity: 2.0; /* прозрачность */
 padding: 15px 10px 10px; /* отступы */
 border-radius: 5px; /* скругление углов */
 -webkit-border-radius: 5px;
@@ -146,6 +146,7 @@ left: 3px; /* отступ слева */
 bottom: 10px; /* отступ снизу */
 display: none; /* спрятать блок */
 cursor: pointer;
+vertical-align: bottom;
 }
 
 /*Для редактирования аватара профиля (выбор из дефолтных)*/

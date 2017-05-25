@@ -87,7 +87,7 @@
             <!-- Администраторская панель начало-->
             <br><br><br>
               <% if (user.username == "admin" || user.username =="admin2") { %>
-                <li><a href="/personalArea" onclick="$('body').append('<form id=\'submitme\' method=\'GET\' action=\'/getAllUsersInJSON\'></form>');$('#submitme').submit();return false;">Список пользователей в JSON-формате</a></li>
+                <li><a href="/personalArea" onclick="$('body').append('<form id=\'submitme\' method=\'GET\' action=\'/users\'></form>');$('#submitme').submit();return false;">Список пользователей в JSON-формате</a></li>
                 <br><br><br>
               <li><a href="/personalArea" onclick="$('body').append('<form id=\'submitme\' method=\'GET\' action=\'/dropDatabase\'></form>');$('#submitme').submit();return false;">ОЧИСТИТЬ БАЗУ ДАННЫХ</a></li>
               <% }  %>

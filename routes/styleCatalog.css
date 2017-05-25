@@ -1,45 +1,86 @@
-body{
-	height: auto;
-}
 .icons li a{
 	padding: 15px 5px;
 }
-
+.navbar-brand{
+	margin-left: 55px;
+}
 .authentication li a{
   padding: 15px 10px;
 }
 .imageShapka{
     margin-bottom: 0px;
 }
-.activ-page{
-	font-size: 125%; /* Размер шрифта */
+
+/*СТИЛИ КАТАЛОГА НАЧАЛО*/
+.form-search {
+	margin-left: 260px;
 }
-.carousel{
-  margin-top: 25px;
+.search-query{
+	width: 900px;
+	height: 35px;
+	border-radius: 0px !important;
 }
-.card-row{
- margin: 0 auto; /* Отступ слева и справа */
+/*.btn {
+	background-color:#2979FF;
+	color:#ffffff;
+	border-color:#2979FF;
+	height: 36px;
+	width: 80px;
+	border-radius: 2px ;
+}*/
+.navmenu {
+width: 180px;
+padding-left: 55px;
+padding-top: 0px;
 }
-.card-row a:hover img{
-	box-shadow: 0 0 30px rgba(0, 0, 0, .70);
-	-webkit-transition: all 0.7s ease-out; /*-webkit- — для Google Chrome и Safari*/
-	-moz-transition: all 0.7s ease-out; /*-moz- — для Firefox*/
-  -o-transition: all 0.7s ease-out; /*-o- — для браузера Опера*/
- -webkit-transform: scale(1.03);
- -moz-transform: scale(1.03);
- -o-transform: scale(1.03);
+/* ОТКРЫВАЕТ ВЕРТИКАЛЬНОЕ МЕНЮ ПРИ НАВЕДЕНИИ-ПОКА ОСТАВИТЬ
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}*/
+.dropdown-inside
+{
+   display: none;
 }
-.item h2{
-	text-shadow: #263238 0 0 2px;
-	-webkit-text-stroke: 0.3px black;
+.dropdown-left:focus ~ .dropdown-inside,
+.dropdown-left:active ~ .dropdown-inside,
+.dropdown-inside:hover
+{
+   display: block;
 }
+
+ul.dropdown li { position: relative; }
+ ul.dropdown,
+ ul.dropdown-inside {
+ list-style-type: none;
+ padding: 0;
+ }
+ ul.dropdown-inside {
+ 	position: absolute;
+ 	z-index: 10000;
+ }
+ ul.dropdown li.dropdown-left {
+ display: inline;
+ float: left;
+ margin: 0 1px 0 0;
+ }
+ ul.dropdown li.dropdown-left a {
+ padding: 3px 10px 4px;
+ display: block;
+ }
+ ul.dropdown a.dropdown-left:hover { background: #fff; }
+
+ ul.dropdown .dropdown-inside { background: #fff; }
+ ul.dropdown .dropdown-inside a:hover { background: #B0BEC5; }
+
+/*СТИЛИ КАТАЛОГА КОНЕЦ*/
+
 
 
 
 footer {
 	margin-bottom: 0px;
   margin-top: 0px;
-	  height: 300px;
+	height: 260px;
 	background-color: white;
 	/*background-image: url("footer.jpg");
 	background-size: cover;*/
@@ -66,7 +107,7 @@ footer .footer-right  a {
 	color:black;
 }
 .footer-bottom-left{
-
+	margin-left: 45px;
 	float:left;
 }
 .footer-bottom-left  a {
@@ -76,6 +117,7 @@ footer .footer-right  a {
 	color:red;
 }
 .footer-bottom-right{
+	margin-right: 45px;
 	float: right;
 }
 .footer-bottom-right a{
@@ -98,11 +140,7 @@ display: none; /* спрятать блок */
 cursor: pointer;
 }
 
-/*Для правил сайта*/
-pre h5, h2 {
-	margin-left: 0px;
-	-webkit-text-stroke: 0.3px black;
-}
+
 
 /*ПОД АДАПТИВНУЮ ВЕРСТКУ*/
 
