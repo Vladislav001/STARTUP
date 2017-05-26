@@ -132,7 +132,16 @@ schema.statics.updatePersonalData = function(id, updateEmail, updateGender, upda
            callback);
          };
 
+ // Обновление данных в публичном профиле (доступно ТОЛЬКО админам)
+schema.statics.updatePersonalPublicData = function(id, updateEmail, updateGender, updateAboutMySelf, callback) {
+  var User = this;
 
+   User.findOneAndUpdate({_id: id}, { $set:
+     {email: updateEmail,
+     gender: updateGender,
+     aboutMySelf: updateAboutMySelf}},
+              callback);
+       };
 
 // Для того, чтобы наш класс умел сохранаться и искаться в БД
 // Примечание: как только объявляем model - mongoose создает все индексы, которые нужны для поодержки schema

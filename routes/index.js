@@ -16,7 +16,8 @@ module.exports = function(app) {
   app.get('/personalArea', checkAuth, require('./pagesSite/personalArea').get); // вставили middleware проверки авторизованности пользователя
 
   app.post('/updatePersonalData', require('./actions/updatePersonalData').post);
-  //app.get('/id:idTag', require('./actions/getUserById').get); //Пока непонятно как передавать и id 
+  app.post('/updatePersonalPublicData', require('./actions/updatePersonalPublicData').post);
+  //app.get('/id:idTag', require('./actions/getUserById').get); //Пока непонятно как передавать и id
   app.get('/publicProfile', require('./pagesSite/publicProfile').get); // обрабатываемая корневая страница(начальная)
 
   app.get('/getAllUsersInJSON', require('./actions/getAllUsersInJSON').get);
