@@ -13,7 +13,6 @@
           <div class="card">
             <div class="description">
               <% if (user.username == "admin" || user.username =="admin2") { %>
-
                 <% switch (user.myAvatar) {
                 case "1": %>
                   <p><img src="../imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round" ></p>
@@ -24,9 +23,7 @@
                   case "3": %>
                   <p><img src="../imagesPersonalArea/3_adminPhotoProfile.png" alt="" class="round" ></p>
                        <% break; %>
-                   <% } %>
-
-
+                   <% } %
               <% } else if (user.gender == "Мужской") { %>
               <p><img src="../imagesPersonalArea/standartPhotoProfileMan.png" alt="" class="round"></p>
               <% } else if (user.gender == "Женский") { %>

@@ -1,3 +1,23 @@
+.users-bar {
+  float: right; /* Обтекание по правому краю */
+    /*background: #fd0; /* Цвет фона */
+    border: 1px solid black; /* Параметры рамки */
+    padding: 10px; /* Поля вокруг текста */
+    margin-right: 20px; /* Отступ справа */
+    width: 240px; /* Ширина блока */
+}
+
+.user-bar {
+  margin: auto; /* Выравниваем по центру */
+    background: #fff; /* Цвет фона */
+    border: 1px solid black; /* Параметры рамки */
+    padding: 5px; /* Поля вокруг текста */
+    margin-right: 20px; /* Отступ справа */
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+    width: 100%; /* Ширина блока */
+}
+
 .icons li a{
 	padding: 15px 5px;
 }
