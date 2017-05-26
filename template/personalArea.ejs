@@ -10,25 +10,22 @@
   <div class="container">
     <div class="row">
       <div class="card-row clearfix">
+
         <div class="col-md-4">
           <div class="card">
             <div class="description">
-              <h4>Добро пожаловать, <%=user.get('username')%></h4>
+              <h3>    Добро пожаловать, <%=user.get('username')%></h3>
               <% if (user.username == "admin" || user.username =="admin2") { %>
-
                 <!--
                 <p><img src="imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_1"></p>
                 <p><img src="imagesPersonalArea/2_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_2"></p>
                 <p><img src="imagesPersonalArea/3_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_3"></p>
               -->
-
                 <% switch (user.myAvatar) {
                 case "1": %>
-
                   <p><img src="imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_1"></p>
                   <p><img src="imagesPersonalArea/2_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_2"></p>
                   <p><img src="imagesPersonalArea/3_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_3"></p>
-
                    <% break; %><%
                   case "2": %>
                   <p><img src="imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_1"></p>
@@ -41,20 +38,13 @@
                   <p><img src="imagesPersonalArea/3_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_3"></p>
                        <% break; %>
                   <% } %>
-
               <% } else if (user.gender == "Мужской") { %>
-
               <p><img src="imagesPersonalArea/standartPhotoProfileMan.png" alt="" class="round"></p>
-
               <% } else if (user.gender == "Женский") { %>
-
               <p><img src="imagesPersonalArea/standartPhotoProfileWomen.png" alt="" class="round"></p>
-
               <% } else { %>
-
                 <p><img src="imagesPersonalArea/standartPhotoProfile.png" alt="" class="round"></p>
                 <!--<p><img src="<%=user.get('myAvatar')%>" alt="" class="round">-->
-
                <% } %>
             </div>
 
@@ -87,7 +77,7 @@
             <!-- Администраторская панель начало-->
             <br><br><br>
               <% if (user.username == "admin" || user.username =="admin2") { %>
-                <li><a href="/personalArea" onclick="$('body').append('<form id=\'submitme\' method=\'GET\' action=\'/users\'></form>');$('#submitme').submit();return false;">Список пользователей в JSON-формате</a></li>
+                <li><a href="/personalArea" onclick="$('body').append('<form id=\'submitme\' method=\'GET\' action=\'/getAllUsersInJSON\'></form>');$('#submitme').submit();return false;">Список пользователей в JSON-формате</a></li>
                 <br><br><br>
               <li><a href="/personalArea" onclick="$('body').append('<form id=\'submitme\' method=\'GET\' action=\'/dropDatabase\'></form>');$('#submitme').submit();return false;">ОЧИСТИТЬ БАЗУ ДАННЫХ</a></li>
               <% }  %>
@@ -98,11 +88,11 @@
 
         <div class="col-md-4">
           <div class="card">
-            <h5>Имя пользователя: <input name="username" value="<%=user.get('username')%>" type="text" class="form-control-personalArea" id="input-username" disabled></h5>
-            <h5>Изменить пароль: <input name="password" value="" type="text" class="form-control-personalArea" id="input-password" placeholder="Введите новый пароль"></h5>
-            <h5>Ваш email: <input name="email" value="<%=user.get('email')%>" type="text" class="form-control-personalArea" id="input-email"></h5>
-            <h5>Ваш пол:
-              <SELECT name="gender" type="text" class="form-control-personalArea" id="input-gender" >
+            <h4>Имя пользователя: <div class="inputWindow"><input name="username" value="<%=user.get('username')%>" type="text" class="form-control-personalArea" id="input-username" disabled></div></h4>
+            <h4>Изменить пароль:  <div class="inputWindow"><input name="password" value="" type="text" class="form-control-personalArea" id="input-password" placeholder="Введите новый пароль"></div></h4>
+            <h4>Ваш email: <div class="inputWindow"><input name="email" value="<%=user.get('email')%>" type="text" class="form-control-personalArea" id="input-email"></div></h4>
+            <h4>Ваш пол:
+              <div class="inputWindow"><SELECT name="gender" type="text" class="form-control-personalArea" id="input-gender" >
                 <% switch (user.gender) {
                 case "Мужской": %>
                   <OPTION ><%=user.get('gender')%></OPTION>
@@ -119,9 +109,9 @@
                         <OPTION>Мужской</OPTION>
                         <OPTION>Женский</OPTION>
                        <% break; %>  <% } %>
-              </SELECT>
-            </h5>
-            <h5>О себе: <input name="aboutMySelf" value="<%=user.get('aboutMySelf')%>" type="text" class="form-control-personalArea-aboutMe" id="input-aboutMe" placeholder="Расскажите о себе"></h5>
+              </SELECT></div>
+            </h4>
+            <h4>О себе:<div class="inputWindow"><input name="aboutMySelf" value="<%=user.get('aboutMySelf')%>" type="text" class="form-control-personalArea-aboutMe" id="input-aboutMe" placeholder="Расскажите о себе"></div></h4>
             <button type="submit" class="btn btn-primary" id="updatePesonalData">Обновить информацию</button>
           </div>
         </div>
@@ -133,7 +123,14 @@
             <h5><a href="#"><u>Желаете получать доход от ваших товаров?</u></a></h5>
             <h5>Дата регистрации: <%=user.get('created')%></h5>
             <h5>Как выглядит ваш публичный профиль: <a href="/publicProfile",><%=user.get('username')%></a></h5>
-            <h5>Список пользователей: <a href="/#">СПИСОК</a></h5>
+            <h5>Список пользователей:</h5>
+            <% if (user.username == "admin" || user.username =="admin2") { %>
+              <div class="users-bar">
+                <% for(var i=0; i<links.length; i++) { %>
+                  <div class="user-bar"><a href="<%=links[i]%>"><%=usernames[i]%></a></div>
+                <% } %>
+              </div>
+            <% } %>
           </div>
         </div>
       </div>
@@ -153,10 +150,8 @@
 // Человек вводит логин, email,
 $(document.forms['cabinet_form']).on('submit', function() {
   var form = $(this);
-
   $('.error', form).html('');
   $(":submit", form).button("loading");
-
   // Этот логин, email, пароль отправляются на сервер
   $.ajax({
     url: "/updatePersonalData", // роут: require('./registration').post
@@ -168,7 +163,6 @@ $(document.forms['cabinet_form']).on('submit', function() {
     statusCode: {
       // если ответ сервера 200 - перенаправляем человека в личный кабинет(успешно создали нового пользователя)
       200: function() {
-
         form.html("Вы успешно обновились").addClass('alert-success');
         window.location.href = "/personalArea";
       },
@@ -189,12 +183,9 @@ $(document.forms['cabinet_form']).on('submit', function() {
 setTimeout(function(){
   $('#myAvatar').trigger('click');
 }, 0);
-
 // Отрисовка аватара, в зависимости от фокуса на выпадающем списке
 $("#myAvatar").click(function(){
-
 var choiseAvatar = $("#myAvatar").val();
-
   switch (choiseAvatar) {
     case "1":
       $("#avatarAdmin_1").css("display","block");

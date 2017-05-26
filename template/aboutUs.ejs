@@ -1,5 +1,67 @@
-<!--Подключаем CSS Jasny Bootstrap -->
++<!--Подключаем CSS Jasny Bootstrap -->
 <link href="css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
-<link rel="stylesheet" href="css/styleCatalog.css">
+<link rel="stylesheet" href="css/styleAboutUs.css">
 <% layout('layout/page') -%>
 <% block('title'); -%>
+
+<!-- Аккордион -->
+<div class="container">
+<div class="panel-group" id="accordion">
+  <!-- 1 панель -->
+  <div class="panel panel-default">
+    <!-- Заголовок 1 панели -->
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-1"><b>Немного о Сайте</b></a>
+      </h4>
+    </div>
+    <div id="collapse-1" class="panel-collapse collapse in">
+      <!-- Содержимое 1 панели -->
+      <div class="panel-body">
+        <p>Наш сайт представляет собой веб-ресурс,
+          основанный группой креативных фрилансеров.
+          Начиная с 2017 наша команда разрабатывает магазины графического контента.
+          Наша цель - обеспечивать пользователей эксклюзивной информацией,
+          помогать мастерам по компьютерной графике обмениваться
+          профессиональными навыками и творческими достижениями.</p>
+      </div>
+    </div>
+  </div>
+  <!-- 2 панель -->
+  <div class="panel panel-default">
+    <!-- Заголовок 2 панели -->
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-2"><b>Наша команда</b></a>
+      </h4>
+    </div>
+    <div id="collapse-2" class="panel-collapse collapse">
+      <!-- Содержимое 2 панели -->
+      <div class="panel-body">
+        <p>
+        <img src="../imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round">
+        <img src="../imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round">
+        <img src="../imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round">
+        <img src="../imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round">
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- 3 панель -->
+  <div class="panel panel-default">
+    <!-- Заголовок 3 панели -->
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-3"><b>Открыть 3 слайд</b></a>
+      </h4>
+    </div>
+    <div id="collapse-3" class="panel-collapse collapse">
+      <!-- Содержимое 3 панели -->
+      <div class="panel-body">
+        <p>КОНТЕНТ </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Конец аккордиона -->

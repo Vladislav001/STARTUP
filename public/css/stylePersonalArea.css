@@ -38,6 +38,10 @@ padding-top: 5px;
     border: 3px solid #B0BEC5; /* Параметры рамки */
     box-shadow: 0 0 7px #666; /* Параметры тени */
 }
+.btn{
+	position: relative;
+	width: 300px;
+}
 .btn-primary{
 	/*margin-left: 82px;*/
   color: white;
@@ -45,9 +49,13 @@ padding-top: 5px;
 .changeAvatar{
 	margin-right: 2100px;
 }
-
+.inputWindow{
+	width: 300px;
+}
 .col-md-4 .form-control-personalArea{
-	width: auto;
+	width:300px;
+  position: relative;
+	right: 0px;
 	padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
