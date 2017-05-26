@@ -4,9 +4,8 @@
 <% block('title') -%>
 
 <form class="form-signin" name="registration_form">
-  <h2><center>Регистрация</center></h2>
+  <div class="headReg"><h2>Регистрация</h2></div>
 	<h5><center>Пожалуйста, расскажите нам о себе.</center></h5>
-  <br>
   <h4>Имя пользователя</h4>
   <div class="form-group">
     <input name="username" value="" type="text" class="form-control" id="input-username" placeholder="Имя пользователя">
@@ -47,7 +46,6 @@
 // Человек вводит логин, email, парль
 $(document.forms['registration_form']).on('submit', function() {
   var form = $(this);
-
   $('.error', form).html('');
   $(":submit", form).button("loading");
 
