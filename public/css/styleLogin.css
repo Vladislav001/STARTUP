@@ -36,3 +36,12 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.btn-signin{
+  width: 300px;
+}
+.headReg{
+  text-align: center;
+}
+.form-group{
+  border-radius: 4px !important; 
+}

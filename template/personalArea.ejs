@@ -14,7 +14,7 @@
         <div class="col-md-4">
           <div class="card">
             <div class="description">
-              <h4>Добро пожаловать, <%=user.get('username')%></h4>
+              <h3>    Добро пожаловать, <%=user.get('username')%></h3>
               <% if (user.username == "admin" || user.username =="admin2") { %>
                 <!--
                 <p><img src="imagesPersonalArea/1_adminPhotoProfile.png" alt="" class="round" id="avatarAdmin_1"></p>
@@ -88,11 +88,11 @@
 
         <div class="col-md-4">
           <div class="card">
-            <h5>Имя пользователя: <input name="username" value="<%=user.get('username')%>" type="text" class="form-control-personalArea" id="input-username" disabled></h5>
-            <h5>Изменить пароль: <input name="password" value="" type="text" class="form-control-personalArea" id="input-password" placeholder="Введите новый пароль"></h5>
-            <h5>Ваш email: <input name="email" value="<%=user.get('email')%>" type="text" class="form-control-personalArea" id="input-email"></h5>
-            <h5>Ваш пол:
-              <SELECT name="gender" type="text" class="form-control-personalArea" id="input-gender" >
+            <h4>Имя пользователя: <div class="inputWindow"><input name="username" value="<%=user.get('username')%>" type="text" class="form-control-personalArea" id="input-username" disabled></div></h4>
+            <h4>Изменить пароль:  <div class="inputWindow"><input name="password" value="" type="text" class="form-control-personalArea" id="input-password" placeholder="Введите новый пароль"></div></h4>
+            <h4>Ваш email: <div class="inputWindow"><input name="email" value="<%=user.get('email')%>" type="text" class="form-control-personalArea" id="input-email"></div></h4>
+            <h4>Ваш пол:
+              <div class="inputWindow"><SELECT name="gender" type="text" class="form-control-personalArea" id="input-gender" >
                 <% switch (user.gender) {
                 case "Мужской": %>
                   <OPTION ><%=user.get('gender')%></OPTION>
@@ -109,9 +109,9 @@
                         <OPTION>Мужской</OPTION>
                         <OPTION>Женский</OPTION>
                        <% break; %>  <% } %>
-              </SELECT>
-            </h5>
-            <h5>О себе: <input name="aboutMySelf" value="<%=user.get('aboutMySelf')%>" type="text" class="form-control-personalArea-aboutMe" id="input-aboutMe" placeholder="Расскажите о себе"></h5>
+              </SELECT></div>
+            </h4>
+            <h4>О себе:<div class="inputWindow"><input name="aboutMySelf" value="<%=user.get('aboutMySelf')%>" type="text" class="form-control-personalArea-aboutMe" id="input-aboutMe" placeholder="Расскажите о себе"></div></h4>
             <button type="submit" class="btn btn-primary" id="updatePesonalData">Обновить информацию</button>
           </div>
         </div>
